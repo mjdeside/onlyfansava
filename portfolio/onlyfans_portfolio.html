@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ava - Lifestyle Content Creator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .photo-placeholder {
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            border: 3px solid white;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .quick-stats {
+            display: flex;
+            justify-content: space-around;
+            font-size: 12px;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 2px;
+        }
+
+        .about-text {
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .interest-tag {
+            background: #f0f0f0;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #333;
+            border-left: 3px solid #667eea;
+        }
+
+        .vibe-list {
+            list-style: none;
+        }
+
+        .vibe-list li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .vibe-list li:last-child {
+            border-bottom: none;
+        }
+
+        .vibe-list li::before {
+            content: '✨ ';
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .highlights {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .highlights p {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="photo-placeholder">
+                📸 Add Your Photo Here
+            </div>
+            <div class="name">Ava</div>
+            <div class="tagline">Lifestyle • Travel • Good Vibes</div>
+
+            <div class="quick-stats">
+                <div class="stat">
+                    <span class="stat-value">5'7"</span>
+                    <span>Height</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">Sagittarius ♐</span>
+                    <span>Zodiac</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">Florida</span>
+                    <span>Location</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- About Section -->
+            <div class="section">
+                <div class="section-title">About Me</div>
+                <div class="about-text">
+                    <p>Hey! I'm Ava, a Sagittarius who loves exploring life's adventures. You'll find me at the beach, catching movies, learning Spanish, and enjoying the simple pleasures of life. I'm all about authentic connections and sharing my lifestyle with people who appreciate good vibes and genuine interactions. Let's get to know each other! 🌴</p>
+                </div>
+            </div>
+
+            <!-- What I Love -->
+            <div class="section">
+                <div class="section-title">What I Love</div>
+                <div class="interests-grid">
+                    <div class="interest-tag">☕ Coffee Dates</div>
+                    <div class="interest-tag">🍝 Pasta Nights</div>
+                    <div class="interest-tag">🏖️ Beach Days</div>
+                    <div class="interest-tag">🎬 Cinema</div>
+                    <div class="interest-tag">🎵 Indie & Techno</div>
+                    <div class="interest-tag">✈️ Travel</div>
+                </div>
+            </div>
+
+            <!-- My Vibe -->
+            <div class="section">
+                <div class="section-title">My Vibe</div>
+                <ul class="vibe-list">
+                    <li>Social, energetic & flirty</li>
+                    <li>Independent & fiercely soft</li>
+                    <li>Secretely soft & genuinely kind</li>
+                    <li>Always up for spontaneous plans</li>
+                    <li>Love deep conversations</li>
+                    <li>Appreciate humor & wit</li>
+                </ul>
+            </div>
+
+            <!-- Travel Dreams -->
+            <div class="section">
+                <div class="section-title">Travel Dreams</div>
+                <div class="about-text">
+                    <p>Currently dreaming about exploring Australia 🦘 Brisbane is on my bucket list! I love experiencing new cultures, trying local cuisine, and meeting people from all over the world. If you love travel and adventure, we'll definitely vibe together!</p>
+                </div>
+            </div>
+
+            <!-- What I Offer -->
+            <div class="section">
+                <div class="section-title">What You'll Get</div>
+                <div class="highlights">
+                    <p>✨ <strong>Daily Life Glimpses</strong> - Behind-the-scenes moments of my daily adventures</p>
+                    <p>✨ <strong>Real Conversations</strong> - Direct messages, Q&As, and genuine connection</p>
+                    <p>✨ <strong>Travel & Lifestyle Tips</strong> - Places to visit, things to try, life advice</p>
+                    <p>✨ <strong>Exclusive Content</strong> - Stories, photos, and moments just for subscribers</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <div class="cta-text">
+                    Ready to join the adventure? Subscribe to get exclusive access to my lifestyle content, daily updates, and a chance to connect with me! 🌟
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
