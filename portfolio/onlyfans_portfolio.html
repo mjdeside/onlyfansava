@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava - Lifestyle Content Creator</title>
+    <title>Ava - OnlyFans</title>
     <style>
         * {
             margin: 0;
@@ -13,259 +13,614 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            background: #0f0f0f;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0066;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #ff0066;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 0 20px;
         }
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 100px 20px;
             text-align: center;
-        }
-
-        .photo-placeholder {
-            width: 150px;
-            height: 150px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            margin: 0 auto 20px;
+            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            border: 3px solid white;
         }
 
-        .name {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .hero-content {
+            max-width: 800px;
         }
 
-        .tagline {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-
-        .quick-stats {
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 0, 102, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 3px solid #ff0066;
             display: flex;
-            justify-content: space-around;
-            font-size: 12px;
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-value {
+            align-items: center;
+            justify-content: center;
             font-size: 16px;
-            font-weight: bold;
-            display: block;
+            color: #ff0066;
         }
 
-        .content {
-            padding: 30px 20px;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #ff0066;
         }
 
-        .section {
+        .hero p {
+            font-size: 18px;
             margin-bottom: 30px;
+            color: #bbb;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff0066 0%, #ff6699 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 0, 102, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #1a1a1a;
         }
 
         .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff0066;
         }
 
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 20px;
-            background: #667eea;
-            border-radius: 2px;
-        }
-
-        .about-text {
-            color: #333;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        .interests-grid {
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 40px;
+            align-items: center;
         }
 
-        .interest-tag {
-            background: #f0f0f0;
-            padding: 10px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            color: #333;
-            border-left: 3px solid #667eea;
-        }
-
-        .vibe-list {
-            list-style: none;
-        }
-
-        .vibe-list li {
-            padding: 8px 0;
-            color: #555;
-            font-size: 14px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .vibe-list li:last-child {
-            border-bottom: none;
-        }
-
-        .vibe-list li::before {
-            content: '✨ ';
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .cta-text {
-            font-size: 16px;
+        .about-text h3 {
+            font-size: 24px;
             margin-bottom: 15px;
-            line-height: 1.5;
         }
 
-        .highlights {
-            background: #fff9e6;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
+        .about-text p {
+            margin-bottom: 15px;
+            color: #bbb;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 0, 102, 0.1);
+            border-radius: 15px;
+            border: 2px solid #ff0066;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff0066;
+            font-size: 16px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 20px;
+            background: #0f0f0f;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: rgba(255, 0, 102, 0.1);
+            border: 2px solid #333;
+            border-radius: 12px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff0066;
+            font-size: 14px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            border-color: #ff0066;
+            background: rgba(255, 0, 102, 0.15);
+            transform: translateY(-5px);
+        }
+
+        /* Subscription Tiers */
+        .tiers {
+            padding: 80px 20px;
+            background: #1a1a1a;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tier-card {
+            background: #2a2a2a;
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .tier-card:hover {
+            border-color: #ff0066;
+            background: rgba(255, 0, 102, 0.05);
+            transform: translateY(-10px);
+        }
+
+        .tier-card.featured {
+            border-color: #ff0066;
+            background: rgba(255, 0, 102, 0.1);
+            transform: scale(1.05);
+        }
+
+        .tier-price {
+            font-size: 36px;
+            color: #ff0066;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .tier-name {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .tier-features {
+            list-style: none;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .tier-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            color: #bbb;
+        }
+
+        .tier-features li::before {
+            content: '✓ ';
+            color: #ff0066;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tier-button {
+            width: 100%;
+            background: linear-gradient(135deg, #ff0066 0%, #ff6699 100%);
+            color: white;
+            padding: 12px 20px;
+            border: none;
             border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
             margin-top: 20px;
         }
 
-        .highlights p {
-            font-size: 13px;
-            color: #333;
-            margin-bottom: 8px;
-            line-height: 1.5;
+        .tier-button:hover {
+            transform: scale(1.02);
+        }
+
+        /* Info Section */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #ff0066;
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: #ff0066;
+        }
+
+        .info-card p {
+            color: #bbb;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 20px;
+            background: #0f0f0f;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #1a1a1a;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: #2a2a2a;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            color: #bbb;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-toggle {
+            color: #ff0066;
+            font-size: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #888;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #ff0066;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff6699;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tier-card.featured {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <div class="photo-placeholder">
-                📸 Add Your Photo Here
-            </div>
-            <div class="name">Ava</div>
-            <div class="tagline">Lifestyle • Travel • Good Vibes</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Ava ✨</div>
+            <ul>
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('about')">About</a></li>
+                <li><a onclick="scrollToSection('gallery')">Gallery</a></li>
+                <li><a onclick="scrollToSection('subscription')">Subscribe</a></li>
+                <li><a onclick="scrollToSection('faq')">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
 
-            <div class="quick-stats">
-                <div class="stat">
-                    <span class="stat-value">5'7"</span>
-                    <span>Height</span>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-image">📸 Your Photo</div>
+            <h1>Hey, I'm Ava 👋</h1>
+            <p>Your daily escape into lifestyle, travel, and genuine connections. Join my OnlyFans for exclusive content, real conversations, and a peek into my world.</p>
+            <button class="cta-button">Subscribe Now →</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Get To Know Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Who Am I?</h3>
+                    <p>I'm Ava, a 24-year-old Sagittarius from sunny Florida. I'm that girl who's always up for an adventure, loves a good beach day, and believes life is meant to be lived to the fullest.</p>
+                    <p>By day, I'm a Virtual Assistant helping others crush their goals. By night? You'll find me at the cinema, sipping coffee, or planning my next travel adventure.</p>
+                    <p>What makes me different? I'm authentic, real, and I actually care about connecting with the people who follow me. No filters, just genuine vibes.</p>
                 </div>
-                <div class="stat">
-                    <span class="stat-value">Sagittarius ♐</span>
-                    <span>Zodiac</span>
+                <div class="about-image">📷 Lifestyle Photo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Exclusive Gallery</h2>
+            <p style="text-align: center; color: #bbb; margin-bottom: 40px;">Sneak peek at what awaits you as a subscriber</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">📸 Beach Days</div>
+                <div class="gallery-item">🎬 Cinema Nights</div>
+                <div class="gallery-item">☕ Coffee & Vibes</div>
+                <div class="gallery-item">✈️ Travel Content</div>
+                <div class="gallery-item">💃 Life Moments</div>
+                <div class="gallery-item">🌅 Sunset Hours</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Tiers -->
+    <section id="subscription" class="tiers">
+        <div class="container">
+            <h2 class="section-title">Choose Your Experience</h2>
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <div class="tier-name">Basic Fan</div>
+                    <div class="tier-price">$5/mo</div>
+                    <ul class="tier-features">
+                        <li>Daily Photo Updates</li>
+                        <li>Behind-the-Scenes Content</li>
+                        <li>Monthly Lives</li>
+                        <li>Access to Story Feed</li>
+                    </ul>
+                    <button class="tier-button">Subscribe</button>
                 </div>
-                <div class="stat">
-                    <span class="stat-value">Florida</span>
-                    <span>Location</span>
+
+                <div class="tier-card featured">
+                    <div class="tier-name">⭐ VIP Member</div>
+                    <div class="tier-price">$15/mo</div>
+                    <ul class="tier-features">
+                        <li>Everything in Basic</li>
+                        <li>Exclusive Photoshoots</li>
+                        <li>Weekly Private Messages</li>
+                        <li>Custom Content Requests</li>
+                        <li>Monthly Video Calls</li>
+                    </ul>
+                    <button class="tier-button">Subscribe</button>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-name">Premium Plus</div>
+                    <div class="tier-price">$25/mo</div>
+                    <ul class="tier-features">
+                        <li>Everything in VIP</li>
+                        <li>Priority Messaging</li>
+                        <li>Personalized Content</li>
+                        <li>Exclusive Meetup Chances</li>
+                        <li>Unlimited Video Calls</li>
+                    </ul>
+                    <button class="tier-button">Subscribe</button>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Main Content -->
-        <div class="content">
-            <!-- About Section -->
-            <div class="section">
-                <div class="section-title">About Me</div>
-                <div class="about-text">
-                    <p>Hey! I'm Ava, a Sagittarius who loves exploring life's adventures. You'll find me at the beach, catching movies, learning Spanish, and enjoying the simple pleasures of life. I'm all about authentic connections and sharing my lifestyle with people who appreciate good vibes and genuine interactions. Let's get to know each other! 🌴</p>
+    <!-- What You Get Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">What's Inside</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📷 Exclusive Photos</h3>
+                    <p>High-quality, exclusive photos you won't find anywhere else. From casual beach days to glammed up nights.</p>
                 </div>
-            </div>
-
-            <!-- What I Love -->
-            <div class="section">
-                <div class="section-title">What I Love</div>
-                <div class="interests-grid">
-                    <div class="interest-tag">☕ Coffee Dates</div>
-                    <div class="interest-tag">🍝 Pasta Nights</div>
-                    <div class="interest-tag">🏖️ Beach Days</div>
-                    <div class="interest-tag">🎬 Cinema</div>
-                    <div class="interest-tag">🎵 Indie & Techno</div>
-                    <div class="interest-tag">✈️ Travel</div>
+                <div class="info-card">
+                    <h3>💬 Real Conversations</h3>
+                    <p>Direct messaging, personal DMs, and actual interaction. I respond to my subscribers and love connecting.</p>
                 </div>
-            </div>
-
-            <!-- My Vibe -->
-            <div class="section">
-                <div class="section-title">My Vibe</div>
-                <ul class="vibe-list">
-                    <li>Social, energetic & flirty</li>
-                    <li>Independent & fiercely soft</li>
-                    <li>Secretely soft & genuinely kind</li>
-                    <li>Always up for spontaneous plans</li>
-                    <li>Love deep conversations</li>
-                    <li>Appreciate humor & wit</li>
-                </ul>
-            </div>
-
-            <!-- Travel Dreams -->
-            <div class="section">
-                <div class="section-title">Travel Dreams</div>
-                <div class="about-text">
-                    <p>Currently dreaming about exploring Australia 🦘 Brisbane is on my bucket list! I love experiencing new cultures, trying local cuisine, and meeting people from all over the world. If you love travel and adventure, we'll definitely vibe together!</p>
+                <div class="info-card">
+                    <h3>✈️ Travel & Lifestyle</h3>
+                    <p>Follow my adventures, travel tips, favorite spots, and lifestyle recommendations from around the world.</p>
                 </div>
-            </div>
-
-            <!-- What I Offer -->
-            <div class="section">
-                <div class="section-title">What You'll Get</div>
-                <div class="highlights">
-                    <p>✨ <strong>Daily Life Glimpses</strong> - Behind-the-scenes moments of my daily adventures</p>
-                    <p>✨ <strong>Real Conversations</strong> - Direct messages, Q&As, and genuine connection</p>
-                    <p>✨ <strong>Travel & Lifestyle Tips</strong> - Places to visit, things to try, life advice</p>
-                    <p>✨ <strong>Exclusive Content</strong> - Stories, photos, and moments just for subscribers</p>
+                <div class="info-card">
+                    <h3>🎥 Video Content</h3>
+                    <p>Exclusive videos, daily lives, and behind-the-scenes footage of my life. Raw and unfiltered.</p>
                 </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="cta-section">
-                <div class="cta-text">
-                    Ready to join the adventure? Subscribe to get exclusive access to my lifestyle content, daily updates, and a chance to connect with me! 🌟
+                <div class="info-card">
+                    <h3>💋 Personalized Content</h3>
+                    <p>Higher tiers get custom content created just for them. Your requests, your preferences, your rules.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌟 VIP Treatment</h3>
+                    <p>Feel special. VIP members get priority responses, personal attention, and exclusive opportunities.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is my content safe and private?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! OnlyFans is a secure platform with privacy protection. Your subscription is confidential, and content is only available to paying subscribers.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I message you directly?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! Depending on your subscription tier, you'll have access to direct messaging. I love hearing from my fans and make it a priority to respond!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How often do you post content?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    I post daily! You'll get at least one update per day, plus exclusive videos, lives, and surprise content. Subscribing is like getting a front-row seat to my life.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I want to cancel?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    No problem! You can cancel anytime with no questions asked. Your subscription auto-renews monthly, but you're always in control.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer custom content?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! VIP and Premium Plus members can request custom content. Just send me your ideas and I'll make it happen within reason.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">TikTok</a>
+        </div>
+        <p>&copy; 2026 Ava. All rights reserved. | <a href="#" style="color: #888;">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            element?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+
+            document.querySelectorAll('.faq-answer').forEach(el => {
+                if (el !== answer) {
+                    el.classList.remove('active');
+                    el.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+
+            answer.classList.toggle('active');
+            toggle.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+    </script>
 </body>
 </html>
