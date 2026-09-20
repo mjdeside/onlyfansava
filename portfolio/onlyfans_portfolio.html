@@ -93,6 +93,13 @@
             justify-content: center;
             font-size: 16px;
             color: #ff0066;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero h1 {
@@ -168,6 +175,13 @@
             justify-content: center;
             color: #ff0066;
             font-size: 16px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Gallery Section */
@@ -195,6 +209,32 @@
             font-size: 14px;
             transition: all 0.3s;
             cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #ff0066;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
         }
 
         .gallery-item:hover {
@@ -416,7 +456,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-image">📸 Your Photo</div>
+            <div class="hero-image">
+                <img src="Profile.jpg" alt="Ava Profile">
+            </div>
             <h1>Hey, I'm Ava 👋</h1>
             <p style="margin-bottom: 10px;">20 • Sagittarius ♐ • 5'7" • Florida • Single</p>
             <p>Your daily escape into lifestyle, travel, and genuine connections. Join my OnlyFans for exclusive content, real conversations, and a peek into my world.</p>
@@ -436,7 +478,9 @@
                     <p><strong>My Vibe:</strong> Social, energetic, flirty, independent, and secretly soft. I'm the girl who loves deep conversations, spontaneous plans, and good humor. No filters, no drama—just authentic vibes and real moments.</p>
                     <p><strong>What I Love:</strong> Beach days, pasta (especially lasagna 🍝), techno music, traveling—especially Australia and Brisbane! I love good coffee, cinema nights, and connecting with people who get me.</p>
                 </div>
-                <div class="about-image">📷 Lifestyle Photo</div>
+                <div class="about-image">
+                    <img src="IMG_7031.jpg" alt="Lifestyle">
+                </div>
             </div>
         </div>
     </section>
@@ -447,14 +491,38 @@
             <h2 class="section-title">Exclusive Gallery</h2>
             <p style="text-align: center; color: #bbb; margin-bottom: 40px;">Sneak peek at what awaits you as a subscriber</p>
             <div class="gallery-grid">
-                <div class="gallery-item">🏖️ Beach Days (Florida)</div>
-                <div class="gallery-item">🎬 Cinema Nights</div>
-                <div class="gallery-item">☕ Coffee Dates</div>
-                <div class="gallery-item">✈️ Travel Adventures</div>
-                <div class="gallery-item">🍝 Pasta & Food</div>
-                <div class="gallery-item">🎵 Techno Vibes</div>
-                <div class="gallery-item">📚 Learning Spanish</div>
-                <div class="gallery-item">🌅 Sunset Moments</div>
+                <div class="gallery-item">
+                    <img src="IMG_7519.jpg" alt="Beach Days">
+                    <div class="overlay">🏖️ Beach Days</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_6305.jpg" alt="Life Moments">
+                    <div class="overlay">💃 Life Moments</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_5940.jpg" alt="Adventure">
+                    <div class="overlay">✈️ Adventures</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_4637.jpg" alt="Lifestyle">
+                    <div class="overlay">🌟 Lifestyle</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_4092.jpg" alt="Moments">
+                    <div class="overlay">📸 Moments</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_7031.jpg" alt="Vibes">
+                    <div class="overlay">✨ Vibes</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_2739 (1).jpg" alt="More Content">
+                    <div class="overlay">🎨 Content</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Profile.jpg" alt="Profile">
+                    <div class="overlay">👋 Just Me</div>
+                </div>
             </div>
         </div>
     </section>
